@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --canvas: 38 40% 96%;
+  --panel: 0 0% 100%;
+  --border: 210 20% 82%;
+  --accent: 42 96% 57%;
+  --ink: 222 28% 14%;
+  --muted: 217 10% 45%;
+  --success: 150 70% 60%;
+  --danger: 0 75% 58%;
+}
+
+.dark {
+  --canvas: 210 24% 9%;
+  --panel: 216 24% 12%;
+  --border: 216 18% 22%;
+  --accent: 42 95% 58%;
+  --ink: 210 40% 96%;
+  --muted: 215 15% 68%;
+  --success: 150 69% 55%;
+  --danger: 0 74% 56%;
+}
+
+body {
+  @apply bg-canvas font-sans text-ink antialiased;
+  background-image:
+    radial-gradient(circle at top left, rgba(255, 199, 0, 0.14), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(42, 157, 143, 0.14), transparent 22%);
+}
+
+#root {
+  min-height: 100vh;
+}
