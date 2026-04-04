@@ -10,6 +10,8 @@ Important:
 - Localhost link = works only on your own machine
 - Public app link needs deployment of frontend, backend, database, and Redis
 
+For deployment steps, see [DEPLOYMENT.md](/C:/Users/Priya/Desktop/Ledgr/DEPLOYMENT.md).
+
 ## What You Need
 
 Install these first:

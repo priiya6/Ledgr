@@ -15,6 +15,7 @@ import { emailAlertService } from './services/email-alert.service';
 
 export const createApp = () => {
   const app = express();
+  const allowedOrigins = env.APP_ORIGIN.split(',').map((origin) => origin.trim());
 
   const openApiSpec = swaggerJsdoc({
     definition: {
@@ -38,7 +39,7 @@ export const createApp = () => {
 
   app.use(
     cors({
-      origin: env.APP_ORIGIN,
+      origin: allowedOrigins,
       credentials: true,
     })
   );

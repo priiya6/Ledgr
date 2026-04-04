@@ -137,6 +137,8 @@ For a public assignment demo link, you need:
 
 This repository is ready for local use and deployment preparation, but actual public hosting must be connected to a deployment platform using your own account credentials.
 
+Deployment instructions are in [DEPLOYMENT.md](/C:/Users/Priya/Desktop/Ledgr/DEPLOYMENT.md).
+
 ## Status Tracking
 
 - Session progress and remaining work are maintained in [STATUS.md](/C:/Users/Priya/Desktop/Ledgr/STATUS.md)
