@@ -49,6 +49,18 @@ export const createApp = () => {
   app.use(globalRateLimit);
   app.use(userRateLimit);
 
+  app.get('/', (_req, res) => {
+    res.status(200).json({
+      success: true,
+      data: {
+        name: 'Ledgr API',
+        status: 'running',
+        health: '/health',
+        docs: '/api/docs',
+      },
+    });
+  });
+
   app.get('/health', (_req, res) => {
     res.status(200).json({ success: true, data: { status: 'ok' } });
   });

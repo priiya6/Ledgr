@@ -4,6 +4,12 @@ Repository: `https://github.com/priiya6/Ledgr`
 
 This file is the simple run guide for the assignment.
 
+Important:
+
+- GitHub repo link = source code only
+- Localhost link = works only on your own machine
+- Public app link needs deployment of frontend, backend, database, and Redis
+
 ## What You Need
 
 Install these first:

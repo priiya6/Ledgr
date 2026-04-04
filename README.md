@@ -124,6 +124,19 @@ npm run seed
 npm test
 ```
 
+## Deployment Note
+
+The GitHub repository link shares the source code, but it does not by itself host the application for public use.
+
+For a public assignment demo link, you need:
+
+- frontend deployment for `apps/web`
+- backend deployment for `apps/api`
+- hosted PostgreSQL
+- hosted Redis
+
+This repository is ready for local use and deployment preparation, but actual public hosting must be connected to a deployment platform using your own account credentials.
+
 ## Status Tracking
 
 - Session progress and remaining work are maintained in [STATUS.md](/C:/Users/Priya/Desktop/Ledgr/STATUS.md)
