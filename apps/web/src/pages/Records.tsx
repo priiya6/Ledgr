@@ -85,7 +85,7 @@ export const RecordsPage = () => {
           <p className="text-xs uppercase tracking-[0.3em] text-muted">Records</p>
           <h2 className="text-3xl font-bold">Financial records</h2>
         </div>
-        <RoleGate roles={['ADMIN']}>
+        <RoleGate roles={['VIEWER', 'ANALYST', 'ADMIN']}>
           <Button onClick={openCreate} type="button">
             New record
           </Button>
@@ -101,8 +101,20 @@ export const RecordsPage = () => {
             <option value="EXPENSE">Expense</option>
           </Select>
           <Input placeholder="Category" value={filters.category} onChange={(event) => setFilters((prev) => ({ ...prev, category: event.target.value }))} />
-          <Input type="date" value={filters.dateFrom} onChange={(event) => setFilters((prev) => ({ ...prev, dateFrom: event.target.value }))} />
-          <Input type="date" value={filters.dateTo} onChange={(event) => setFilters((prev) => ({ ...prev, dateTo: event.target.value }))} />
+          <Input
+            aria-label="Start Date"
+            placeholder="Start Date"
+            type="date"
+            value={filters.dateFrom}
+            onChange={(event) => setFilters((prev) => ({ ...prev, dateFrom: event.target.value }))}
+          />
+          <Input
+            aria-label="End Date"
+            placeholder="End Date"
+            type="date"
+            value={filters.dateTo}
+            onChange={(event) => setFilters((prev) => ({ ...prev, dateTo: event.target.value }))}
+          />
           <Select value={filters.sortOrder} onChange={(event) => setFilters((prev) => ({ ...prev, sortOrder: event.target.value }))}>
             <option value="desc">Newest first</option>
             <option value="asc">Oldest first</option>
@@ -135,7 +147,7 @@ export const RecordsPage = () => {
                     <td className="py-4">{record.description ?? '-'}</td>
                     <td className="py-4">{formatCurrency(Number(record.amount))}</td>
                     <td className="py-4 text-right">
-                      <RoleGate roles={['ADMIN']}>
+                      <RoleGate roles={['VIEWER', 'ANALYST', 'ADMIN']}>
                         <div className="flex justify-end gap-2">
                           <Button
                             className="bg-white/10 text-ink"

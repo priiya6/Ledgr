@@ -55,8 +55,8 @@ export const AnalyticsPage = () => {
             <option value="daily">Daily</option>
             <option value="monthly">Monthly</option>
           </Select>
-          <Input type="date" value={dateFrom} onChange={(event) => setDateFrom(event.target.value)} />
-          <Input type="date" value={dateTo} onChange={(event) => setDateTo(event.target.value)} />
+          <Input aria-label="Start Date" placeholder="Start Date" type="date" value={dateFrom} onChange={(event) => setDateFrom(event.target.value)} />
+          <Input aria-label="End Date" placeholder="End Date" type="date" value={dateTo} onChange={(event) => setDateTo(event.target.value)} />
         </div>
       </Card>
 

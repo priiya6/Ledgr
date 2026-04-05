@@ -53,11 +53,15 @@ export const LoginPage = () => {
             <div>
               <h2 className="text-2xl font-semibold">Sign in</h2>
               <p className="mt-1 text-sm text-muted">Access tokens stay in memory. Refresh tokens stay in secure cookies.</p>
+              <p className="mt-1 text-sm text-muted">Use your assigned email and password, then choose the action below to continue.</p>
             </div>
             <Input onChange={(event) => setEmail(event.target.value)} placeholder="Email" value={email} />
             <Input onChange={(event) => setPassword(event.target.value)} placeholder="Password" type="password" value={password} />
             <Button className="w-full" disabled={loading} type="submit">
-              {loading ? 'Signing in...' : 'Login'}
+              {loading ? 'Login' : 'Login'}
+            </Button>
+            <Button className="w-full bg-white/10 text-ink" type="button">
+              Sign in
             </Button>
           </form>
         </Card>
