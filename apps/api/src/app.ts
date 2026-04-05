@@ -83,7 +83,7 @@ if (require.main === module) {
   void redis.connect().catch(() => undefined);
   emailAlertService.start();
 
-  app.listen(env.PORT, () => {
+  app.listen(env.PORT, '0.0.0.0', () => {
     logger.info('API server started', { port: env.PORT, environment: env.NODE_ENV });
   });
 }

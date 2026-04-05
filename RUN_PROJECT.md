@@ -8,7 +8,8 @@ Important:
 
 - GitHub repo link = source code only
 - Localhost link = works only on your own machine
-- Public app link needs deployment of frontend, backend, database, and Redis
+- Public frontend link is live on Vercel
+- Full production app still needs backend, database, and Redis hosting
 
 For deployment steps, see [DEPLOYMENT.md](/C:/Users/Priya/Desktop/Ledgr/DEPLOYMENT.md).
 
@@ -21,6 +22,21 @@ Install these first:
 - `Docker Desktop`
 
 ## Project URLs
+
+Public frontend:
+
+- Live site: `https://ledgr-pi-two.vercel.app`
+
+Share this one public link for the frontend:
+
+- `https://ledgr-pi-two.vercel.app`
+
+Backend deployment:
+
+- Render blueprint file: [render.yaml](/C:/Users/Priya/Desktop/Ledgr/render.yaml)
+- After Render creates the API, set `VITE_API_BASE_URL=https://your-render-api.onrender.com/api` in Vercel and redeploy
+
+Local development:
 
 When the project is running:
 
