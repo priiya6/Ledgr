@@ -281,6 +281,31 @@ describe('API integration', () => {
     expect(response.status).toBe(403);
   });
 
+  it('POST /api/records as ANALYST returns 403', async () => {
+    const token = makeToken('33333333-3333-3333-3333-333333333333', 'analyst1@finance.dev', 'ANALYST');
+    const response = await request(app)
+      .post('/api/records')
+      .set('Authorization', `Bearer ${token}`)
+      .send({
+        type: 'EXPENSE',
+        amount: 100,
+        category: 'Rent',
+        date: '2026-03-02T00:00:00.000Z',
+      });
+
+    expect(response.status).toBe(403);
+  });
+
+  it('DELETE /api/records/:id as VIEWER returns 403', async () => {
+    const token = makeToken('22222222-2222-2222-2222-222222222222', 'viewer1@finance.dev', 'VIEWER');
+    const response = await request(app)
+      .delete('/api/records/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa')
+      .set('Authorization', `Bearer ${token}`);
+
+    expect(response.status).toBe(403);
+    expect(state.records[0]!.isDeleted).toBe(false);
+  });
+
   it('DELETE /api/records/:id as ADMIN soft deletes record', async () => {
     const token = makeToken('11111111-1111-1111-1111-111111111111', 'admin@finance.dev', 'ADMIN');
     const response = await request(app)

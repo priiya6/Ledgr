@@ -85,7 +85,7 @@ export const RecordsPage = () => {
           <p className="text-xs uppercase tracking-[0.3em] text-muted">Records</p>
           <h2 className="text-3xl font-bold">Financial records</h2>
         </div>
-        <RoleGate roles={['VIEWER', 'ANALYST', 'ADMIN']}>
+        <RoleGate roles={['ADMIN']}>
           <Button onClick={openCreate} type="button">
             New record
           </Button>
@@ -147,7 +147,7 @@ export const RecordsPage = () => {
                     <td className="py-4">{record.description ?? '-'}</td>
                     <td className="py-4">{formatCurrency(Number(record.amount))}</td>
                     <td className="py-4 text-right">
-                      <RoleGate roles={['VIEWER', 'ANALYST', 'ADMIN']}>
+                      <RoleGate roles={['ADMIN']}>
                         <div className="flex justify-end gap-2">
                           <Button
                             className="bg-white/10 text-ink"
